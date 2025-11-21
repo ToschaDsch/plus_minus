@@ -41,6 +41,9 @@ def start_the_function():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    start_the_function()
+    for i in range(10):
+        print("Nr.", i+1)
+        start_the_function()
+    print("Gut gemacht!")
 
 
