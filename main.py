@@ -26,7 +26,6 @@ def check_the_answer(answer: int) -> bool:
     try:
         answer_input = int(input("= "))
     except ValueError as e:
-        print(f"ValueError: {e}")
         return False
     return answer == answer_input
 
