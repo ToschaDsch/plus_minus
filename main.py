@@ -1,5 +1,25 @@
 import random
 
+def get_a_simple_example_study_2(n_max: int=20) -> tuple[str, int]:
+    """the function return answer and a string
+            for example "4+10"
+            for +, and -
+            the summe is < n_max
+            the answer are allways between 0 and 20
+        """
+    sign = random.choice(['+', '-'])
+    n1 = random.randint(0, n_max)
+    n2 = 0
+    answer = 0
+    match sign:
+        case '+':
+            n2 = random.randint(0, n_max - n1)
+            answer = n1 + n2
+        case '-':
+            n2 = random.randint(0, n1)
+            answer = n1 - n2
+    string_ = f"{n1} {sign} {n2} "
+    return string_, answer
 
 def get_a_simple_example(n_max: int=20) -> tuple[str, int]:
     """the function return answer and a string
@@ -36,7 +56,7 @@ def check_the_answer(answer: int) -> bool:
     return answer == answer_input
 
 def start_the_function():
-    string_, answer = get_a_simple_example()
+    string_, answer = get_a_simple_example_study_2()
     print(string_, end="")
     while not check_the_answer(answer):
         print("falsch :(")
@@ -50,5 +70,6 @@ if __name__ == '__main__':
         print("Nr.", i+1)
         start_the_function()
     print("Gut gemacht!")
+    input()
 
 
